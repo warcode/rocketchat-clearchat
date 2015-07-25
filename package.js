@@ -14,6 +14,7 @@ Package.onUse(function(api) {
 	]);
 
 	api.addFiles('clearchat.server.coffee', ['server']);
+	api.addFiles('clearchat.client.coffee', ['client']);
 });
 
 Package.onTest(function(api) {
