@@ -6,8 +6,10 @@
 class Clear
 	constructor: (command, params, item) ->
 		if command is "clear"
-			if Meteor.user()?.admin is true
-				ChatMessage.remove({"_id" : item.rid})
+			currentUser = Meteor.user()
+			if currentUser.admin is true
+				ChatMessage.remove
+					rid: item.rid
 
 
 RocketChat.slashCommands.add 'clear', Clear
